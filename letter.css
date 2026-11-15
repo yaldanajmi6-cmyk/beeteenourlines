@@ -1,0 +1,257 @@
+
+/* =================================
+   20 NIGHTS TOGETHER
+   FINAL LETTER
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body.letter-page {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    background: #FAF9F6;
+    color: #182B49;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* CELESTIAL BACKGROUND */
+
+.letter-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(24, 43, 73, 0.98) 0%,
+            rgba(24, 43, 73, 0.88) 13%,
+            rgba(32, 40, 68, 0.55) 27%,
+            rgba(32, 40, 68, 0.16) 43%,
+            transparent 58%
+        ),
+        radial-gradient(
+            ellipse at 0% 100%,
+            rgba(24, 43, 73, 0.94) 0%,
+            rgba(24, 43, 73, 0.58) 14%,
+            rgba(32, 40, 68, 0.18) 29%,
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 95% 80%,
+            rgba(32, 40, 68, 0.28),
+            transparent 34%
+        );
+}
+
+/* STARS */
+
+.letter-page::after {
+    content: "✦     ·       ✧          ✦";
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    top: 12%;
+    right: 8%;
+    width: 30%;
+    color: #FFFFFF;
+    opacity: 0.65;
+    font-size: 15px;
+    letter-spacing: 22px;
+    line-height: 5;
+    text-align: center;
+}
+
+/* HEADER */
+
+.letter-header {
+    position: relative;
+    z-index: 1;
+    min-height: 76px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #D9DDE4;
+}
+
+.letter-header a {
+    color: #182B49;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.letter-header p {
+    margin: 0;
+    color: #E5E9F0;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* MAIN */
+
+.letter-main {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 75px 9% 65px;
+}
+
+.letter-document {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+/* TITLE */
+
+.letter-eyebrow {
+    margin: 0 0 25px;
+    color: #9E2638;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+#letter-title {
+    margin: 0;
+    color: #182B49;
+    font-size: clamp(34px, 5vw, 54px);
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+/* DIVIDER */
+
+.letter-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 650px;
+    margin: 32px 0 38px;
+    color: #9E2638;
+}
+
+.letter-divider span {
+    height: 1px;
+    flex: 1;
+    background: #B77A83;
+}
+
+.letter-divider b {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+/* LETTER TEXT */
+
+#letter-content {
+    max-width: 650px;
+    color: #39465B;
+    font-size: 17px;
+    line-height: 2.1;
+    white-space: pre-wrap;
+}
+
+/* ENDING */
+
+.letter-ending {
+    margin-top: 55px;
+}
+
+.letter-ending span {
+    display: block;
+    width: 45px;
+    height: 1px;
+    background: #9E2638;
+    margin-bottom: 15px;
+}
+
+.letter-ending p {
+    margin: 0;
+    color: #737D8D;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+}
+
+/* FOOTER */
+
+.letter-footer {
+    position: relative;
+    z-index: 1;
+    min-height: 58px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #D9DDE4;
+}
+
+.letter-footer p {
+    margin: 0;
+    color: #737D8D;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .letter-header {
+        min-height: 65px;
+        padding: 0 6%;
+    }
+
+    .letter-header p {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .letter-main {
+        padding: 65px 7% 50px;
+    }
+
+    .letter-eyebrow {
+        font-size: 9px;
+    }
+
+    #letter-title {
+        font-size: 35px;
+    }
+
+    #letter-content {
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .letter-footer {
+        min-height: 55px;
+        padding: 0 6%;
+    }
+
+}
+#letter-content {
+    direction: rtl;
+    text-align: right;
+    line-height: 2.2;
+}

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Literary Collection</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #archive-frame {
+            display: none;
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body class="entrance-page">
+
+    <header id="entrance-header">
+        <p>PRIVATE LITERARY COLLECTION</p>
+    </header>
+
+    <main id="entrance-main">
+        <section class="entrance-content">
+
+            <h1>Some things deserve to be kept</h1>
+
+            <p>Not everything needs to be said twice</p>
+
+            <form id="password-form">
+                <div class="password-tab">
+
+                    <input
+                        type="password"
+                        id="password-input"
+                        placeholder="Enter password"
+                        aria-label="Enter password"
+                        required
+                    >
+
+                    <button type="submit" aria-label="Enter">
+                        →
+                    </button>
+
+                </div>
+
+                <p id="password-error"></p>
+            </form>
+
+        </section>
+    </main>
+
+    <footer id="entrance-footer">
+        <p>An archive of written words.</p>
+    </footer>
+
+    <audio id="entrance-music" src="media/perfect.mp3" preload="auto"></audio>
+
+    <iframe id="archive-frame" title="Literary Collection"></iframe>
+
+    <script src="gate.js"></script>
+
+    <script>
+        const form = document.getElementById("password-form");
+        const passwordInput = document.getElementById("password-input");
+        const errorMessage = document.getElementById("password-error");
+        const music = document.getElementById("entrance-music");
+        const archiveFrame = document.getElementById("archive-frame");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (passwordInput.value !== correctPassword) {
+                errorMessage.textContent = "Incorrect password.";
+                return;
+            }
+
+            sessionStorage.setItem("archiveAccess", "granted");
+
+            // Start the music directly from the password button click.
+            music.volume = 0.8;
+
+            music.play().catch(function(error) {
+                console.log("Music playback error:", error);
+            });
+
+            // Open the collection without leaving this page.
+            document.getElementById("entrance-header").style.display = "none";
+            document.getElementById("entrance-main").style.display = "none";
+            document.getElementById("entrance-footer").style.display = "none";
+
+            document.body.classList.remove("entrance-page");
+            document.body.style.margin = "0";
+
+            archiveFrame.style.display = "block";
+            archiveFrame.src = "collection.html";
+        });
+    </script>
+
+</body>
+</html>

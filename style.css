@@ -1,0 +1,1098 @@
+
+/* =====================================
+   01. GLOBAL SETTINGS
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #FFFFFF;
+    color: #17191F;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+
+a {
+    color: #182B49;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #9E2638;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* =====================================
+   02. ENTRANCE PAGE
+===================================== */
+
+.entrance-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 76px minmax(0, 1fr) 54px;
+    overflow-x: hidden;
+}
+
+.entrance-page header {
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.entrance-page header p {
+    margin: 0;
+    color: #182B49;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.entrance-page main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.entrance-content {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-2vh);
+}
+
+.entrance-content h1 {
+    max-width: 100%;
+    margin: 0;
+    color: #182B49;
+    font-size: clamp(34px, 4.2vw, 54px);
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+.entrance-content > p {
+    margin: 18px 0 0;
+    color: #555D69;
+    font-size: 15px;
+}
+
+/* Password */
+
+#password-form {
+    width: 100%;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.password-tab {
+    width: 230px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #182B49;
+}
+
+.password-tab input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 4px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #182B49;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+.password-tab input::placeholder {
+    color: #9297A0;
+    letter-spacing: 0.5px;
+}
+
+#password-form .password-tab button {
+    border: none;
+    background: transparent;
+    color: #9E2638;
+    font-size: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#password-form .password-tab button:hover {
+    transform: translateX(4px);
+}
+
+#password-error {
+    color: #9E2638;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Entrance Footer */
+
+.entrance-page footer {
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    border-top: 1px solid #E5E7EB;
+}
+
+.entrance-page footer p {
+    margin: 0;
+    color: #777F8C;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =====================================
+   03. COLLECTION PAGE
+===================================== */
+
+.collection-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: #FFFFFF;
+}
+
+/* Header */
+
+.collection-page .collection-header {
+    min-height: 76px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.collection-header a {
+    color: #182B49;
+    font-size: 12px;
+}
+
+.collection-header a:hover {
+    color: #9E2638;
+}
+
+.collection-header p {
+    margin: 0;
+    color: #777F8C;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* Main */
+
+.collection-page main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 8% 45px;
+}
+
+/* Introduction */
+
+.collection-intro {
+    padding-bottom: 45px;
+    border-bottom: 1px solid #D9DDE4;
+}
+
+.collection-intro .eyebrow {
+    margin: 0 0 18px;
+    color: #9E2638;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+}
+
+.collection-intro h1 {
+    margin: 0;
+    color: #182B49;
+    font-size: clamp(42px, 5vw, 62px);
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+.collection-intro > p:last-child {
+    margin: 15px 0 0;
+    color: #777F8C;
+    font-size: 14px;
+}
+
+/* Entries */
+
+.collection-section {
+    margin-top: 35px;
+}
+
+.collection-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.collection-heading h2 {
+    margin: 0;
+    color: #182B49;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+.collection-heading span {
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.collection-page .entry-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "type date"
+        "title title"
+        "link link";
+    gap: 7px 20px;
+    padding: 20px 0 23px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.collection-page .entry-item > p:first-child {
+    grid-area: type;
+    margin: 0;
+    color: #9E2638;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+}
+
+.collection-page .entry-item > p:nth-child(3) {
+    grid-area: date;
+    margin: 0;
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-align: right;
+}
+
+.collection-page .entry-item h3 {
+    grid-area: title;
+    margin: 2px 0 4px;
+    color: #182B49;
+    font-size: 23px;
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.collection-page .entry-item a {
+    grid-area: link;
+    justify-self: end;
+    color: #9E2638;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.collection-page .entry-item a:hover {
+    transform: translateX(4px);
+}
+
+/* Last Page Link */
+
+.collection-page .last-page-link {
+    margin-top: 40px;
+    padding: 20px 0;
+    border-top: 1px solid #D9DDE4;
+    border-bottom: 1px solid #D9DDE4;
+    text-align: right;
+}
+
+.collection-page .last-page-link a {
+    color: #9E2638;
+    font-size: 13px;
+}
+
+/* Footer */
+
+.collection-page .collection-footer {
+    min-height: 65px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #E5E7EB;
+}
+
+.collection-footer p {
+    margin: 0;
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+
+/* =====================================
+   04. ENTRY PAGE — FRAMED EDITORIAL DESIGN
+===================================== */
+
+.entry-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    isolation: isolate;
+    overflow-x: hidden;
+    color: #182B49;
+    background-color: #F8F5F1;
+    background-image:
+        radial-gradient(ellipse at 5% 5%, rgba(37, 65, 91, 0.34), transparent 24%),
+        radial-gradient(ellipse at 96% 96%, rgba(145, 58, 73, 0.22), transparent 23%);
+}
+
+/* Double frame */
+.entry-page::before,
+.entry-page::after {
+    content: "";
+    position: fixed;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.entry-page::before {
+    inset: 17px;
+    border: 3px solid #203B55;
+    box-shadow: inset 0 0 0 1px rgba(32,59,85,.08);
+}
+
+.entry-page::after {
+    inset: 29px;
+    border: 1px dashed rgba(32,59,85,.8);
+}
+
+/* Corner ornaments */
+.entry-page .entry-header::before,
+.entry-page .entry-footer::after {
+    content: "✦";
+    position: fixed;
+    z-index: 6;
+    color: #203B55;
+    font-size: 29px;
+    line-height: 1;
+    pointer-events: none;
+}
+.entry-page .entry-header::before {
+    top: 8px;
+    left: 20px;
+}
+.entry-page .entry-footer::after {
+    right: 20px;
+    bottom: 7px;
+}
+
+/* Header */
+.entry-page .entry-header {
+    min-height: 100px;
+    padding: 22px 8% 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.entry-header a {
+    color: #182B49;
+    font-size: 15px;
+    border-bottom: 1px solid #182B49;
+    padding-bottom: 5px;
+}
+
+.entry-header p {
+    margin: 0;
+    color: #182B49;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* Main document */
+.entry-page main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 16px 7% 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.entry-document {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 10px 30px 30px;
+    text-align: center;
+}
+
+/* Metadata */
+.entry-metadata {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 0 0 13px;
+    border: 0;
+    position: relative;
+}
+.entry-metadata::after {
+    content: "✦";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    color: #203B55;
+    font-size: 20px;
+    background: #F8F5F1;
+    padding: 0 10px;
+}
+
+.entry-type,
+.entry-night,
+.entry-date {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    letter-spacing: 1.8px;
+    color: #182B49;
+}
+.entry-night {
+    color: #8D2638;
+}
+
+/* Title and poem */
+.entry-title {
+    margin: 35px 0 27px;
+    color: #102746;
+    font-size: 39px;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+}
+.entry-text {
+    color: #102746;
+    font-size: 20px;
+    line-height: 2.05;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+/* Optional image and marginalia */
+.entry-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 35px auto 0;
+}
+.entry-page .marginalia {
+    margin-top: 38px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(32,59,85,.35);
+    text-align: center;
+}
+.entry-page .entry-document .marginalia-button {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+    color: #8D2638;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.entry-page .entry-document .marginalia-button:hover {
+    color: #8D2638;
+    opacity: .65;
+    background: none;
+}
+.entry-page .marginalia-content {
+    margin-top: 15px;
+    color: #102746;
+}
+
+/* Footer */
+.entry-page .entry-footer {
+    min-height: 70px;
+    padding: 10px 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    border: 0;
+}
+.entry-page .entry-footer p {
+    margin: 0;
+    padding: 0 22px;
+    color: #182B49;
+    background: #F8F5F1;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-align: center;
+}
+
+
+/* =====================================
+   05. LAST PAGE
+===================================== */
+
+#last-page {
+    max-width: 760px;
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
+#last-page > p:first-child {
+    color: #9E2638;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+#letter-title {
+    color: #182B49;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+#letter-content {
+    margin-top: 35px;
+    color: #292D36;
+    line-height: 2;
+}
+
+
+/* =====================================
+   06. RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 600px) {
+
+    /* Entrance */
+
+    .entrance-page {
+        grid-template-rows: 65px minmax(0, 1fr) 50px;
+    }
+
+    .entrance-page header,
+    .entrance-page footer {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .entrance-page header p {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .entrance-content h1 {
+        font-size: 35px;
+    }
+
+    .entrance-content > p {
+        font-size: 13px;
+    }
+
+    /* Collection */
+
+    .collection-page .collection-header {
+        min-height: 65px;
+        padding: 0 6%;
+    }
+
+    .collection-header p {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .collection-page main {
+        padding: 45px 6% 35px;
+    }
+
+    .collection-intro {
+        padding-bottom: 35px;
+    }
+
+    .collection-intro h1 {
+        font-size: 43px;
+    }
+
+    .collection-heading span {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+    }
+
+    .collection-page .entry-item h3 {
+        font-size: 21px;
+    }
+
+    .collection-page .collection-footer {
+        padding: 0 6%;
+    }
+
+    /* Entry */
+
+    .entry-page::before { inset: 10px; border-width: 2px; }
+    .entry-page::after { inset: 18px; }
+    .entry-page .entry-header {
+        min-height: 82px;
+        padding: 22px 8% 8px;
+        gap: 10px;
+    }
+    .entry-header a { font-size: 11px; }
+    .entry-header p { font-size: 8px; letter-spacing: 1.2px; }
+    .entry-page .entry-header::before { top: 5px; left: 12px; font-size: 21px; }
+    .entry-page .entry-footer::after { right: 12px; bottom: 4px; font-size: 21px; }
+    .entry-page main { padding: 18px 7% 20px; }
+    .entry-document { padding: 8px 5px 22px; }
+    .entry-metadata { gap: 9px; }
+    .entry-type, .entry-night, .entry-date { font-size: 9px; letter-spacing: 1px; }
+    .entry-title { font-size: 29px; margin: 31px 0 22px; }
+    .entry-text { font-size: 17px; line-height: 2.05; }
+    .entry-page .entry-footer { min-height: 58px; padding: 8px 8%; }
+    .entry-page .entry-footer p { font-size: 8px; letter-spacing: 1.3px; padding: 0 8px; }
+
+    /* Last Page */
+
+    #last-page {
+        margin: 30px auto;
+        padding: 0 6%;
+    }
+
+    #letter-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-height: 600px) {
+
+    .entrance-page {
+        grid-template-rows: 58px minmax(0, 1fr) 42px;
+    }
+
+    .entrance-content {
+        transform: none;
+    }
+
+    .entrance-content h1 {
+        font-size: 32px;
+    }
+
+    #password-form {
+        margin-top: 22px;
+    }
+}
+
+/* =====================================
+   07. TWENTY DAYS COLLECTION
+===================================== */
+
+.night-section {
+    margin-top: 42px;
+}
+
+.night-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #D9DDE4;
+}
+
+.night-heading h3 {
+    margin: 0;
+    color: #182B49;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.night-heading span {
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* Persian text */
+
+.entry-title,
+.entry-text,
+.marginalia-content {
+    direction: rtl;
+    text-align: right;
+}
+
+.entry-text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+/* Entry metadata */
+
+.entry-metadata {
+    gap: 15px;
+}
+
+.entry-night {
+    margin: 0;
+    color: #182B49;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* Marginalia */
+
+.entry-page .marginalia-content {
+    direction: rtl;
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+
+    .night-section {
+        margin-top: 32px;
+    }
+
+    .entry-metadata {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+}
+
+/* =====================================
+   DAYS OVERVIEW
+===================================== */
+
+.collection-page .collection-section {
+    margin-top: 35px;
+}
+
+.collection-page .collection-heading {
+    margin-bottom: 18px;
+}
+
+.collection-page .night-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 2px;
+    border-bottom: 1px solid #E5E7EB;
+    color: #182B49;
+    transition: padding 0.2s ease, color 0.2s ease;
+}
+
+.collection-page .night-card:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+    color: #9E2638;
+}
+
+.night-card-title {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.8px;
+}
+
+.night-card-count {
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+/* =====================================
+   INDIVIDUAL DAY PAGE
+===================================== */
+
+.night-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: #FFFFFF;
+}
+
+.night-header {
+    min-height: 76px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.night-header a {
+    font-size: 12px;
+}
+
+.night-header p {
+    margin: 0;
+    color: #777F8C;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.night-page main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 8%;
+}
+
+.night-intro {
+    padding-bottom: 35px;
+    border-bottom: 1px solid #D9DDE4;
+}
+
+.night-intro .eyebrow {
+    color: #9E2638;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.night-intro h1 {
+    margin: 10px 0;
+    color: #182B49;
+    font-size: 48px;
+    font-weight: normal;
+}
+
+.night-intro > p:last-child {
+    color: #777F8C;
+    font-size: 14px;
+}
+
+.night-entry-item {
+    padding: 24px 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.night-entry-item h2 {
+    margin: 0 0 8px;
+    color: #182B49;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+.night-entry-item p {
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+}
+
+.night-entry-item a {
+    color: #9E2638;
+    font-size: 12px;
+}
+
+.night-footer {
+    min-height: 65px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #E5E7EB;
+}
+
+.night-footer p {
+    color: #9299A4;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 600px) {
+
+    .night-header {
+        min-height: 65px;
+        padding: 0 6%;
+    }
+
+    .night-header p {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .night-page main {
+        padding: 45px 6%;
+    }
+
+    .night-intro h1 {
+        font-size: 40px;
+    }
+
+    .night-footer {
+        padding: 0 6%;
+    }
+}
+
+/* FINAL LETTER PAGE */
+
+.letter-page {
+    min-height: 100vh;
+    background: #182B49;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.letter-header {
+    min-height: 76px;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.16);
+}
+
+.letter-header a {
+    color: #FFFFFF;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.letter-header p {
+    color: #B9C2D0;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.letter-main {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 8%;
+    flex: 1;
+}
+
+.letter-document {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.letter-eyebrow {
+    color: #C45A68;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    margin-bottom: 35px;
+}
+
+#letter-title {
+    color: #FFFFFF;
+    font-size: 42px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin: 0 0 45px;
+}
+
+#letter-content {
+    color: #D9DEE7;
+    font-size: 16px;
+    line-height: 2.2;
+    white-space: pre-wrap;
+}
+
+.letter-ending {
+    margin-top: 85px;
+}
+
+.letter-ending span {
+    display: block;
+    width: 38px;
+    height: 1px;
+    background: #9E2638;
+    margin-bottom: 18px;
+}
+
+.letter-ending p {
+    color: #929FB2;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.letter-footer {
+    min-height: 65px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.16);
+}
+
+.letter-footer p {
+    color: #929FB2;
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 600px) {
+    .letter-header {
+        min-height: 65px;
+        padding: 0 6%;
+    }
+
+    .letter-header p {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .letter-main {
+        padding: 75px 7%;
+    }
+
+    #letter-title {
+        font-size: 32px;
+    }
+
+    #letter-content {
+        font-size: 15px;
+    }
+
+    .letter-footer {
+        padding: 0 6%;
+    }
+}
